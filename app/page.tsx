@@ -43,32 +43,31 @@ import ExternalLink from "./components/link";
 export default function Home() {
   const career = [
     {
+      title: "Fetcch Labs",
+      description: `We are a research firm building tools for a decentralised, autonomous future.`,
+      time: "Apr 24 - Present",
+      type: "Fullstack Engineer",
+      url: "https://fetcch.xyz/",
+      logo: "/fetcch.png",
+    },
+    {
       title: "Aeos Labs",
       description: `We build generative AI applications and automate workflows for businesses. Currently experimenting with open-source models, AI tools, and building internal tools for the company.`,
-      time: "9 months",
+      time: "July 23 - March 24",
       type: "Fullstack Engineer",
       url: "https://labs.aeoscompany.com/",
-      logo: "https://media.licdn.com/dms/image/D560BAQFqlm1ug_OaeA/company-logo_200_200/0/1702473328345?e=1717632000&v=beta&t=FTKxbKKEVojyDQM6dsCXVI1kCxPQ20fDV0tFZJUvGzo",
+      logo: "/aeos.png",
     },
-    {
-      title: "neoG Camp.",
-      description: `Managed the frontend of the main website. I also was a part of building internal tools and LMS and dashboard that benefitted neoG Camp.
-         Mockman was one of the internal tool I made which is used by over 1000+ times.`,
-      time: "6 months",
-      type: "SDE Intern",
-      url: "https://neog.camp/",
-      logo: "https://neog-lms.vercel.app/favicon.png",
-    },
-    {
-      title: "Strivio Fit",
-      description:
-        "I worked as a freelancer and developed the frontend UI for the user and admin interfaces.",
+    // {
+    //   title: "Strivio Fit",
+    //   description:
+    //     "I worked as a freelancer and developed the frontend UI for the user and admin interfaces.",
 
-      time: "3 months",
-      type: "Freelance Frontend Developer",
-      url: "https://strivio.fit/",
-      logo: "https://media.licdn.com/dms/image/C4D0BAQEV-ilmfs0PGg/company-logo_200_200/0/1649214743339?e=1717632000&v=beta&t=U6Hm1VMaJhMn6By153C5L7LBTQrUbV92GEJCl6I0G98",
-    },
+    //   time: "3 months",
+    //   type: "Freelance Frontend Developer",
+    //   url: "https://strivio.fit/",
+    //   logo: "https://media.licdn.com/dms/image/C4D0BAQEV-ilmfs0PGg/company-logo_200_200/0/1649214743339?e=1717632000&v=beta&t=U6Hm1VMaJhMn6By153C5L7LBTQrUbV92GEJCl6I0G98",
+    // },
   ];
   const redGradient =
     "bg-gradient-to-r from-rose-500 via-pink-500 to-purple-500 text-transparent bg-clip-text";
@@ -83,7 +82,7 @@ export default function Home() {
             </h1>
 
             <p className="text-gray-600 dark:text-gray-400 text-md mt-4 pr-8">
-              I am a 19yo
+              21 |{" "}
               <span
                 className={cn(
                   redGradient,
@@ -92,9 +91,8 @@ export default function Home() {
               >
                 {" "}
                 Fullstack Engineer{" "}
-              </span>
-              having built many projects in past 2 years. Currently building
-              internal tools for companies and simplified their workflow with AI
+              </span>{" "}
+              | JS, TS, Next & AI
             </p>
             <span className="h-8" />
             <div className="mt-3 text-gray-600 dark:text-gray-400 mb-16 ">
@@ -172,7 +170,7 @@ export default function Home() {
           You can check them out here. Let me know what you think!
         </p>
         <div className="w-full">
-          <ProjectCard
+          {/* <ProjectCard
             href="https://mygptbrain.com/"
             title="MyGPTBrain"
             brandColor={"#ffffff"}
@@ -192,6 +190,29 @@ export default function Home() {
             footerNote="Has over 250+ users"
             description="A social bookmarking experience for people who like to share knowledge."
             link={false}
+          /> */}
+
+          <ProjectCard
+            href="https://audionotes.app/"
+            title="Audionotes"
+            brandColor={"#ff3310"}
+            projectLogo={"/audionotes.png"}
+            stack={["nextjs", "typescript"]}
+            description="Audionotes capture and turn your voice recordings, text notes, images, audio files, and YouTube videos into perfect notes for meetings, journals, lectures, emails, and more!"
+            footerNote="Built the whole UI and integration for it"
+            link={true}
+          />
+
+          <ProjectCard
+            href="https://www.packagedesign.app/"
+            title="Package Design"
+            brandColor={"#ffffff"}
+            projectLogo={"/package.png"}
+            stack={["nextjs", "typescript"]}
+            description="PackageDesign turns ideas into package designs powered by AI.
+Generate product packaging designs tailored to your theme & style.
+Ideal for designers seeking inspiration and efficiency."
+            link={true}
           />
           <ProjectCard
             href="https://github.com/neogcamp/mockman"
@@ -205,7 +226,7 @@ export default function Home() {
             description="MockmanJS gives plug and play React Component to test your fake mock-backend APIs."
             link={true}
           />
-          <ProjectCard
+          {/* <ProjectCard
             href="https://strivio.fit/"
             title="Strivio"
             brandColor={"#ffffff"}
@@ -214,7 +235,7 @@ export default function Home() {
             description="Strivio is built to help you find your version of success though fitness."
             footerNote="* Freelance Project"
             link={true}
-          />
+          /> */}
         </div>
 
         <span className="h-16" />
@@ -238,9 +259,6 @@ export default function Home() {
             gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
           />
         </div>
-        <p className="mt-10 text-gray-700 inline-flex items-center">
-          Original Portfolio by Lee Robinson.
-        </p>
       </div>
     </Container>
   );
@@ -321,7 +339,7 @@ function ProjectCard({
               <img
                 src={Logo}
                 style={{ color: brandColor }}
-                className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+                className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100 rounded-full"
               />
             ) : (
               <Logo />
