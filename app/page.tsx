@@ -212,7 +212,6 @@ export default function Home() {
             projectLogo={"/audionotes.png"}
             stack={["nextjs", "typescript"]}
             description="Audionotes capture and turn your voice recordings, text notes, images, audio files, and YouTube videos into perfect notes for meetings, journals, lectures, emails, and more!"
-            footerNote="Built the whole UI and integration for it"
             link={true}
           />
 
@@ -226,6 +225,7 @@ export default function Home() {
 Generate product packaging designs tailored to your theme & style.
 Ideal for designers seeking inspiration and efficiency."
             link={true}
+            footerNote="Built the whole UI and integration for it"
           />
           <ProjectCard
             href="https://github.com/neogcamp/mockman"
@@ -333,7 +333,7 @@ function ProjectCard({
   projectLogo: any;
   stack: (string | undefined)[];
   brandColor: string;
-  footerNote: string;
+  footerNote?: string;
 }) {
   const Logo = projectLogo;
   return (
@@ -387,9 +387,11 @@ function ProjectCard({
                 );
               })}
             </div>
-            <p className="mt-2 text-xs font-light text-gray-500 dark:text-gray-500">
-              {footerNote}
-            </p>
+            {footerNote && (
+              <p className="mt-2 text-xs font-light text-gray-500 dark:text-gray-500">
+                {footerNote}
+              </p>
+            )}
           </div>
         </div>
       </div>
