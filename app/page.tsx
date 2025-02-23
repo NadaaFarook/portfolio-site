@@ -117,6 +117,10 @@ export default function Home() {
                   <p>Prisma</p>
                 </div>
                 <div className="inline-flex items-center space-x-2 mr-2">
+                  <SiNodedotjs color={"#61DBFB"} />
+                  <p>Node.js</p>
+                </div>
+                <div className="inline-flex items-center space-x-2 mr-2">
                   <SiPostgresql color={"#61DBFB"} />
                   <p>PostgreSQL</p>
                 </div>
@@ -192,6 +196,15 @@ export default function Home() {
             link={false}
           /> */}
 
+          <ProjectCard
+            href="https://github.com/MetaMove/move-agent-kit"
+            title="Move AI Agent Kit"
+            brandColor={"#ff3310"}
+            projectLogo={"/metamove.png"}
+            stack={["nextjs", "typescript"]}
+            description="Move Agent Kit is a comprehensive toolkit designed to simplify AI agents' interactions with Move-based blockchains. It provides a unified interface for performing various blockchain operations, making it easier for developers to build AI-powered applications that can interact with different Move-based protocols and applications."
+            link={true}
+          />
           <ProjectCard
             href="https://audionotes.app/"
             title="Audionotes"
@@ -351,7 +364,7 @@ function ProjectCard({
                 {title}
               </h4>
             </div>
-            <p className="leading-5 text-gray-700 dark:text-gray-300 ">
+            <p className="leading-6 font-light text-gray-700 dark:text-gray-300 ">
               {description}
             </p>
             <div className="flex flex-wrap mt-2 gap-2">
